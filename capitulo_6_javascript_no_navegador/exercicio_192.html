@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript no Navegador</title>
+  </head>
+  <body>
+    <button onclick="toggleTheme()">Trocar Tema</button>
+  </body>
+
+  <script>
+    function toggleTheme() {
+      const body = document.querySelector("body");
+
+      if (body.classList.contains("dark-theme")) {
+        body.classList.remove("dark-theme");
+      } else {
+        body.classList.add("dark-theme");
+      }
+    }
+  </script>
+
+  <style>
+    .dark-theme {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</html>

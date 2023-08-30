@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript no Navegador</title>
+  </head>
+  <body>
+    <button onclick="showModal()">Abrir Modal</button>
+    <div
+      id="modal"
+      style="
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        background-color: white;
+        padding: 20px;
+      "
+    >
+      Isso é um modal!
+      <button onclick="closeModal()">Fechar</button>
+    </div>
+  </body>
+
+  <script>
+    function showModal() {
+      const modal = document.querySelector("#modal");
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      const modal = document.querySelector("#modal");
+      modal.style.display = "none";
+    }
+  </script>
+</html>

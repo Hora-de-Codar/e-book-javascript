@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript no Navegador</title>
+  </head>
+  <body>
+    <div class="dropdown" onclick="toggleDropdown()">
+      <div id="selected-option">Opção 1</div>
+      <ul id="options-list" style="display: none">
+        <li onclick="selectOption('Opção 1')">Opção 1</li>
+        <li onclick="selectOption('Opção 2')">Opção 2</li>
+        <li onclick="selectOption('Opção 3')">Opção 3</li>
+      </ul>
+    </div>
+  </body>
+
+  <script>
+    function toggleDropdown() {
+      const list = document.querySelector("#options-list");
+      list.style.display = list.style.display === "none" ? "block" : "none";
+    }
+
+    function selectOption(option) {
+      const selected = document.querySelector("#selected-option");
+      selected.textContent = option;
+      toggleDropdown(); // fecha o dropdown após selecionar
+    }
+  </script>
+</html>

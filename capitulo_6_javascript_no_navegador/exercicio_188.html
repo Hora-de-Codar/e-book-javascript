@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript no Navegador</title>
+  </head>
+  <body>
+    <input type="text" id="user-input" />
+    <p id="display-text"></p>
+  </body>
+
+  <script>
+    const inputField = document.querySelector("#user-input");
+    const displayText = document.querySelector("#display-text");
+
+    inputField.addEventListener("input", function () {
+      displayText.textContent = inputField.value;
+    });
+  </script>
+</html>

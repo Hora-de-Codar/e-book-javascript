@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript no Navegador</title>
+  </head>
+  <body>
+    <button onclick="showForm()">Feedback</button>
+    <div
+      id="feedback-modal"
+      style="
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        background-color: white;
+        padding: 20px;
+      "
+    >
+      <textarea
+        id="feedback-text"
+        placeholder="Deixe seu feedback..."
+      ></textarea
+      ><br />
+      <button onclick="submitFeedback()">Enviar</button>
+    </div>
+  </body>
+
+  <script>
+    function showForm() {
+      const modal = document.querySelector("#feedback-modal");
+      modal.style.display = "block";
+    }
+
+    function submitFeedback() {
+      const feedback = document.querySelector("#feedback-text").value;
+      // Aqui, você pode enviar o feedback para o servidor ou processá-lo como quiser.
+      alert("Obrigado pelo feedback!");
+      closeForm();
+    }
+
+    function closeForm() {
+      const modal = document.querySelector("#feedback-modal");
+      modal.style.display = "none";
+    }
+  </script>
+</html>
