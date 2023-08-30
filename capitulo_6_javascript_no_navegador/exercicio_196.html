@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript no Navegador</title>
+  </head>
+  <body>
+    <textarea id="text-field" oninput="updateCounter()"></textarea>
+    <div>Caracteres restantes: <span id="counter">150</span></div>
+  </body>
+
+  <script>
+    function updateCounter() {
+      const textField = document.querySelector("#text-field");
+      const counter = document.querySelector("#counter");
+      const remaining = 150 - textField.value.length;
+
+      counter.textContent = remaining;
+
+      if (remaining < 0) {
+        counter.style.color = "red";
+        alert("Você excedeu o limite de caracteres!");
+      } else {
+        counter.style.color = "black";
+      }
+    }
+  </script>
+</html>

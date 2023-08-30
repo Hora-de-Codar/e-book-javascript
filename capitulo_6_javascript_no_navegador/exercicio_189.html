@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript no Navegador</title>
+  </head>
+  <body>
+    <div id="toggle-element">Clique no botão para alternar minha classe!</div>
+    <button onclick="toggleClass()">Toggle Classe</button>
+  </body>
+
+  <script>
+    function toggleClass() {
+      const div = document.querySelector("#toggle-element");
+      div.classList.toggle("ativo");
+    }
+  </script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript no Navegador</title>
+  </head>
+  <body>
+    <ul id="draggable-list">
+      <li
+        draggable="true"
+        ondragstart="dragStart(event)"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      >
+        Item 1
+      </li>
+      <li
+        draggable="true"
+        ondragstart="dragStart(event)"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      >
+        Item 2
+      </li>
+      <li
+        draggable="true"
+        ondragstart="dragStart(event)"
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+      >
+        Item 3
+      </li>
+    </ul>
+  </body>
+
+  <script>
+    let draggedItem = null;
+
+    function dragStart(e) {
+      draggedItem = e.target;
+    }
+
+    function allowDrop(e) {
+      e.preventDefault();
+    }
+
+    function drop(e) {
+      e.preventDefault();
+      if (e.target.tagName === "LI") {
+        e.target.parentNode.insertBefore(draggedItem, e.target.nextSibling);
+      }
+    }
+  </script>
+</html>

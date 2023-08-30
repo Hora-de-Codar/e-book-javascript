@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript no Navegador</title>
+  </head>
+  <body>
+    <p id="text">Este é um texto.</p>
+    <button onclick="changeColor()">Mudar Cor</button>
+  </body>
+
+  <script>
+    function changeColor() {
+      const p = document.querySelector("#text");
+      p.style.backgroundColor = "blue";
+    }
+  </script>
+</html>

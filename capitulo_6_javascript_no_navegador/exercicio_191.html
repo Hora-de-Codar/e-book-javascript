@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript no Navegador</title>
+  </head>
+  <body>
+    <div id="scroll-element" style="margin-top: 120vh">Sou visível agora?</div>
+  </body>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      const div = document.querySelector("#scroll-element");
+      const rect = div.getBoundingClientRect();
+
+      if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        div.classList.add("visivel");
+      } else {
+        div.classList.remove("visivel");
+      }
+    });
+  </script>
+</html>

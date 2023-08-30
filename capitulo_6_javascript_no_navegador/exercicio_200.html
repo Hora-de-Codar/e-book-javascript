@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript no Navegador</title>
+  </head>
+  <body>
+    <div class="tabs">
+      <button onclick="showTab('content1')">Aba 1</button>
+      <button onclick="showTab('content2')">Aba 2</button>
+    </div>
+    <div id="content1" class="tab-content">Conteúdo da Aba 1</div>
+    <div id="content2" class="tab-content" style="display: none">
+      Conteúdo da Aba 2
+    </div>
+  </body>
+
+  <script>
+    function showTab(id) {
+      const contents = document.querySelectorAll(".tab-content");
+      contents.forEach((content) => {
+        content.style.display = "none";
+      });
+      document.querySelector("#" + id).style.display = "block";
+    }
+  </script>
+</html>
